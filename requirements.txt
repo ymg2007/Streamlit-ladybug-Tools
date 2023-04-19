@@ -30,3 +30,4 @@ Werkzeug==2.2.3
 zipp==3.15.0
 streamlit
 ladybug-core
+ladybug-charts
