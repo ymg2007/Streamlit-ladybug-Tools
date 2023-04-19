@@ -111,7 +111,7 @@ PySocks
 python-dateutil
 pytz
 pytz-deprecation-shim==0.1.0.post0
-pywinpty
+##pywinpty
 pyzmq
 qtconsole
 QtPy
