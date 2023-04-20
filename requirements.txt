@@ -27,7 +27,7 @@ defusedxml
 entrypoints
 eppy==0.5.63
 fastjsonschema
-Flask==2.2.1
+Flask==2.0.1
 flit_core
 frozenlist==1.3.3
 future==0.18.3
