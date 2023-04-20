@@ -2,7 +2,8 @@
 利用Streamlit网页框架和Ladybug等进行可视化
 # windrose_monthly.py
 用来一次生成全年12月的风玫瑰图
-
+# 体验网页
+https://ymg2007-streamlit-ladybug-tools-windrose-custom-6a4ytk.streamlit.app/
 ![1](https://user-images.githubusercontent.com/24608776/233089701-3e705387-be00-457e-918b-9d3b57263233.jpg)
 ![2](https://user-images.githubusercontent.com/24608776/233089731-a13a5145-adf5-4954-bd21-ce8397f6a484.jpg)
 ![3](https://user-images.githubusercontent.com/24608776/233089737-9118f225-4438-4937-afca-70b9da352012.jpg)
