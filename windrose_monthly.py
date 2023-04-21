@@ -59,12 +59,22 @@ for i in range(1,13):
     pio.write_image(figure, f'{i}.jpg')  
     pio.write_image(figure, f'{i}.pdf')
 
+#增加下载所有图片的功能
 import os
-import shutil
-if not os.path.exists('Image'):
-    os.makedirs('Image')
-if not os.path.exists('PDF'):
-    os.makedirs('pdf')
-for i in range(1,13):         
-    shutil.move(f'{i}.jpg', 'Image/')
-    shutil.move(f'{i}.pdf', 'PDF/')
+import streamlit as st
+from zipfile import ZipFile
+import base64
+# 获取当前目录下所有jpg文件
+jpg_files = [f for f in os.listdir('.') if f.endswith('.jpg')]
+
+# 打包为zip文件
+with ZipFile('image.zip', 'w') as zip:
+    for file in jpg_files:
+        zip.write(file)
+
+# 在streamlit中增加一个按钮，用来下载image.zip
+with open('image.zip', 'rb') as f:
+    bytes = f.read()
+    b64 = base64.b64encode(bytes).decode()
+    href = f'<a href="data:file/zip;base64,{b64}" download="image.zip">下载12个月风玫瑰图压缩包</a>'
+    st.markdown(href, unsafe_allow_html=True)
