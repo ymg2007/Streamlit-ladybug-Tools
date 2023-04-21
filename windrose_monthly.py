@@ -34,7 +34,7 @@ if epw_file:
 else:
     print("No EPW file found.")
 
-uploaded_file = st.file_uploader("Upload EPW file", type="epw")
+uploaded_file = st.file_uploader("请上传EPW气象数据文件", type="epw")
 if uploaded_file is not None:
     data = uploaded_file.getvalue()
     with open("new.epw", "wb") as f:
@@ -55,7 +55,7 @@ for i in range(1,13):
     figure.update_layout(title= str(i) +"月风玫瑰图")
     #显示12个月的风玫瑰图
     st.plotly_chart(figure, use_container_width=True)
-    #保持12个的风玫瑰图   
+    #保存12个月的风玫瑰图   
     pio.write_image(figure, f'{i}.jpg')  
     pio.write_image(figure, f'{i}.pdf')
 
