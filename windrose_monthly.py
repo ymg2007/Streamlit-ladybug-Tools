@@ -5,10 +5,10 @@ import plotly.graph_objects as go
 import streamlit as st
 from ladybug.epw import EPW
 import plotly.io as pio
-
 import requests
 import zipfile
 import os
+# -*- coding: utf-8 -*-
 st.header('这个小程序是用Python开发的，用的是Streamlit网页框架，Ladybug库读取epw气象数据，Plotly库进行可视化')
 st.header（'这个网页底部增加一个按钮，可以下载12个月风玫瑰图的压缩包'）
 url = "https://climate.onebuilding.org/WMO_Region_2_Asia/CHN_China/AH_Anhui/CHN_AH_Anqing.584240_CSWD.zip"
