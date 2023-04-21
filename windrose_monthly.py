@@ -15,7 +15,7 @@ if uploaded_file is not None:
     st.success("File uploaded successfully!")
     epw = EPW("new.epw")
 else:
-    epw_file = './CHN_SH_Shanghai.epw'
+    epw= './CHN_SH_Shanghai.epw'
 
 
 # Python
