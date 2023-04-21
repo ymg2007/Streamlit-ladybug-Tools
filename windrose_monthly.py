@@ -14,7 +14,7 @@ if uploaded_file is not None:
         f.write(data)
     st.success("File uploaded successfully!")
     epw = EPW("new.epw")
- else:
+else:
     epw_file = 'CHN_SH_Shanghai.epw'
 
 
