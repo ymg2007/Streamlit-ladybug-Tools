@@ -42,7 +42,7 @@ if uploaded_file is not None:
     st.success("File uploaded successfully!")
     epw = EPW("new.epw")
 else:
-    epw= epw_file
+    epw= EPW(epw_file)
 
 
 # Python
