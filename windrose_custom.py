@@ -5,6 +5,11 @@ import plotly.graph_objects as go
 import streamlit as st
 from ladybug.epw import EPW
 
+st.header("这个小程序是用Python开发的，用的是Streamlit网页框架，Ladybug库读取epw气象数据，Plotly库进行可视化")
+#st.subheader("这个网页底部增加一个按钮，可以下载12个月风玫瑰图的压缩包"）
+#st.subheader("这个网页底部增加一个按钮，可以下载12个月风玫瑰图的压缩包"）
+st.write("<span style='font-family:SimHei'>开源代码仓库https://github.com/ymg2007/Streamlit-ladybug-Tools</span>", unsafe_allow_html=True)
+
 uploaded_file = st.file_uploader("Upload EPW file", type="epw")
 if uploaded_file is not None:
     data = uploaded_file.getvalue()
