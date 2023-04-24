@@ -67,6 +67,25 @@ if add_selectbox == "一键生成12个月":
         st.plotly_chart(figure, use_container_width=True)
         #保持12个的风玫瑰图   
         pio.write_image(figure, f'{i}.jpg')  
+#增加下载所有图片的功能
+import os
+import streamlit as st
+from zipfile import ZipFile
+import base64
+# 获取当前目录下所有jpg文件
+jpg_files = [f for f in os.listdir('.') if f.endswith('.jpg')]
+
+# 打包为zip文件
+with ZipFile('image.zip', 'w') as zip:
+    for file in jpg_files:
+        zip.write(file)
+
+# 在streamlit中增加一个按钮，用来下载image.zip
+with open('image.zip', 'rb') as f:
+    bytes = f.read()
+    b64 = base64.b64encode(bytes).decode()
+    href = f'<a href="data:file/zip;base64,{b64}" download="image.zip">下载12个月风玫瑰图压缩包</a>'
+    st.markdown(href, unsafe_allow_html=True)  
 
 if add_selectbox == "自定义起止月份":
     uploaded_file = st.file_uploader("请上传EPW气象数据文件", type="epw")
