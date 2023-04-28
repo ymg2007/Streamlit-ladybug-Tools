@@ -4,7 +4,7 @@ import ladybug_charts
 import plotly.graph_objects as go
 import streamlit as st
 from ladybug.epw import EPW
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
 st.header("This Webpage is developed in Python, using the Streamlit, Ladybug library to read EPW, and the Plotly library for visualization")
 #st.subheader("这个网页底部增加一个按钮，可以下载12个月风玫瑰图的压缩包"）
 #st.subheader("这个网页底部增加一个按钮，可以下载12个月风玫瑰图的压缩包"）
