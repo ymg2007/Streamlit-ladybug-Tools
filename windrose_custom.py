@@ -5,10 +5,10 @@ import plotly.graph_objects as go
 import streamlit as st
 from ladybug.epw import EPW
 
-st.header("这个小程序是用Python开发的，用的是Streamlit网页框架，Ladybug库读取epw气象数据，Plotly库进行可视化")
+st.header("This Webpage is developed in Python, using the Streamlit web framework, the Ladybug library to read epw meteorological data, and the Plotly library for visualization")
 #st.subheader("这个网页底部增加一个按钮，可以下载12个月风玫瑰图的压缩包"）
 #st.subheader("这个网页底部增加一个按钮，可以下载12个月风玫瑰图的压缩包"）
-st.write("<span style='font-family:SimHei'>开源代码仓库https://github.com/ymg2007/Streamlit-ladybug-Tools</span>", unsafe_allow_html=True)
+st.write("<span style='font-family:SimHei'>Github link:https://github.com/ymg2007/Streamlit-ladybug-Tools</span>", unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader("Upload EPW file", type="epw")
 if uploaded_file is not None:
@@ -21,14 +21,14 @@ if uploaded_file is not None:
 epw = EPW("new.epw")
 
 # Python
-slider1 = st.slider("起始月份", 1, 12,key=1)
+slider1 = st.slider("Start month", 1, 12,key=1)
 i = slider1
-slider2 = st.slider("终止月份", 1, 12,key=2)
+slider2 = st.slider("End month", 1, 12,key=2)
 j = slider2
 month=ap.AnalysisPeriod(st_month=i,end_month=j)
 a = epw.wind_direction.filter_by_analysis_period(month)
 b = epw.wind_speed.filter_by_analysis_period(month)
 windRose= wr.WindRose(a,b,8)
 figure = ladybug_charts.to_figure.wind_rose(windRose)
-figure.update_layout(title= str(i) +"至"+ str(j)+"月")
+figure.update_layout(title= str(i) +"To"+ str(j))
 st.plotly_chart(figure, use_container_width=True)
