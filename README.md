@@ -1,5 +1,6 @@
 # Streamlit-ladybug-Tools
-利用Streamlit网页框架和Ladybug等进行可视化
+利用Streamlit网页框架和Ladybug等进行气象数据可视化。
+若链接无法访问，可能是服务器休眠。请发邮件至ymg2007@qq.com唤醒。
 # windrose_monthly.py
 全自动生成全年12月的风玫瑰图
 ## 访问链接
